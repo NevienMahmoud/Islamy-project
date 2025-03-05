@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamy_project/home/hadeth/contantOfHadeth.dart';
 import 'package:islamy_project/home/homeScreen.dart';
 import 'package:islamy_project/home/quran/contantOfQuran.dart';
 
@@ -37,6 +38,7 @@ void main(){
       routes: {
         HomeScreen.routeName:(_)=>HomeScreen(),
         QuranContant.routeName:(_)=>QuranContant(),
+        Contantofhadeth.routeName:(_)=>Contantofhadeth(),
       },
     )
   );
