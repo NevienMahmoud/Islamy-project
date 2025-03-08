@@ -31,7 +31,7 @@ class _QuranContantState extends State<QuranContant> {
          ? const Center(child: CircularProgressIndicator())
          :ListView.separated(
            itemBuilder: (context, index) => QuranChapter(content: suraLines[index],), 
-           separatorBuilder: (context, index) => Divider(), 
+           separatorBuilder: (context, index) =>const Divider(), 
            itemCount: suraLines.length),
       ),
     ));
