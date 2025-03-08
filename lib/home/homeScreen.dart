@@ -3,6 +3,7 @@ import 'package:islamy_project/home/taps/hadeth.dart';
 import 'package:islamy_project/home/taps/quran.dart';
 import 'package:islamy_project/home/taps/radio.dart';
 import 'package:islamy_project/home/taps/taspeh.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName='home';
@@ -16,10 +17,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
    int selectedTab=0;
    List<Widget> taps = [
-    RadioTap(),
-    TasbehTap(),
+    QuranTap(),
     HadethTap(),
-    QuranTap()
+    TasbehTap(),
+     RadioTap(),
    ];
 
   @override
@@ -33,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: 
       Scaffold(
-        appBar: AppBar(title:const Text( "اسلامي"),),
+        appBar: AppBar(title: Text( AppLocalizations.of(context)!.app_name),),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: selectedTab,
           onTap: (index) {
@@ -44,16 +45,20 @@ class _HomeScreenState extends State<HomeScreen> {
           items:[
         BottomNavigationBarItem(
           backgroundColor: Theme.of(context).colorScheme.primary,
-          icon: const ImageIcon(AssetImage('assets/images/radio.png')),label: 'الراديو'),
+          icon: const ImageIcon(AssetImage('assets/images/quran.png')),
+          label:AppLocalizations.of(context)!.quran),
         BottomNavigationBarItem(
           backgroundColor: Theme.of(context).colorScheme.primary,
-          icon: const ImageIcon(AssetImage('assets/images/sebha.png')),label: 'التسبيح'),
+          icon: const ImageIcon(AssetImage('assets/images/hadeth.png')),
+          label:AppLocalizations.of(context)!.ahadeth),
         BottomNavigationBarItem(
           backgroundColor: Theme.of(context).colorScheme.primary,
-          icon: const ImageIcon(AssetImage('assets/images/hadeth.png')),label: 'الاحاديث'),
+          icon: const ImageIcon(AssetImage('assets/images/sebha.png')),
+          label: AppLocalizations.of(context)!.tasbeh),
         BottomNavigationBarItem(
           backgroundColor: Theme.of(context).colorScheme.primary,
-          icon: const ImageIcon(AssetImage('assets/images/quran.png')),label: 'القران'),
+          icon: const ImageIcon(AssetImage('assets/images/radio.png')),
+          label: AppLocalizations.of(context)!.radio),  
         ],),
         body: taps[selectedTab],
       ),
