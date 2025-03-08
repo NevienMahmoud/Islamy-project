@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_project/home/hadeth/nameOfHadethList.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadethTap extends StatelessWidget {
   const HadethTap({super.key});
@@ -10,7 +11,8 @@ class HadethTap extends StatelessWidget {
       children: [
         Expanded(child: Image.asset('assets/images/hadeth_header.png')),
          const Divider(),
-         Text('الأحاديث',style: Theme.of(context).textTheme.titleSmall,),
+         Text(AppLocalizations.of(context)!.ahadeth
+        ,style: Theme.of(context).textTheme.titleSmall,),
         const Divider(),
         Expanded(flex: 2,
           child: ListView.separated(itemBuilder: (context, index) => HadethNames(index: index),
