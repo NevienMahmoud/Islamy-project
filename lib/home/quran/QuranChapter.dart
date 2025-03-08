@@ -8,7 +8,7 @@ class QuranChapter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(' $content '
-    ,style: TextStyle(fontSize: 25),
+    ,style: Theme.of(context).textTheme.bodyMedium,
     textDirection: TextDirection.rtl,
     textAlign: TextAlign.center,)
     ;

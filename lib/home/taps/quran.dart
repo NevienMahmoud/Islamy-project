@@ -33,19 +33,31 @@ class QuranTap extends StatelessWidget {
           child: Image.asset('assets/images/quran_header.png')),
        const  Divider(height: 0,),
         Row(children: [
+<<<<<<< HEAD
        Expanded(child:
        Text(AppLocalizations.of(context)!.sura_name,
        style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold), 
+=======
+      Expanded(child:
+       Text('اسم السورة',
+       style: Theme.of(context).textTheme.titleSmall, 
+>>>>>>> development
        textAlign: TextAlign.center)),
       Container(
         height: 35,
         width: 3,
-        color: Theme.of(context).colorScheme.primary,
+        color: Theme.of(context).colorScheme.onPrimaryContainer,
       ),
       Expanded(child: 
+<<<<<<< HEAD
        Text(AppLocalizations.of(context)!.verses_number,
        style: const TextStyle(fontSize: 25,fontWeight: FontWeight.bold),
        textAlign: TextAlign.center,)),
+=======
+       Text('عدد الآيات',
+       style: Theme.of(context).textTheme.titleSmall,
+       textAlign: TextAlign.center,)),  
+>>>>>>> development
     ],
     ),
         const Divider(height: 0,),

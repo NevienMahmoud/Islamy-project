@@ -14,7 +14,7 @@ class HadethNames extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('الحديث رقم ${index+1}',
-          style: const TextStyle(fontSize: 25, fontWeight: FontWeight.w400),)
+          style: Theme.of(context).textTheme.bodyMedium,)
         ],
       ),
     );

@@ -6,7 +6,7 @@ class HadethChapter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(text,style:const TextStyle(fontSize: 25),
+    return Text(text,style:Theme.of(context).textTheme.bodyMedium,
     textDirection: TextDirection.rtl,
     textAlign: TextAlign.center,);
   }
