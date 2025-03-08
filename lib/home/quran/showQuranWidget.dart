@@ -20,19 +20,20 @@ class ShowWidgetOfQuranTap extends StatelessWidget {
           arguments: QuranArguments(suraName, index)),
       child:  
        Row(children: [
-        Expanded(child: 
-         Text(numbers.toString(),
-         style: Theme.of(context).textTheme.bodySmall,
-         textAlign: TextAlign.center,)),
+        Expanded(child:
+         Text(suraName,
+         style: Theme.of(context).textTheme.bodySmall, 
+         textAlign: TextAlign.center)),
         Container(
           height: 35,
           width: 3,
           color: Theme.of(context).colorScheme.onPrimaryContainer,
         ),
-        Expanded(child:
-         Text(suraName,
-         style: Theme.of(context).textTheme.bodySmall, 
-         textAlign: TextAlign.center)),
+        Expanded(child: 
+         Text(numbers.toString(),
+         style: Theme.of(context).textTheme.bodySmall,
+         textAlign: TextAlign.center,)),
+       
       ],
       ),
     );
