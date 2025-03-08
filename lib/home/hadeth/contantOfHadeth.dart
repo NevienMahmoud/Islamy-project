@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islamy_project/Style/AppStyle.dart';
 import 'package:islamy_project/home/hadeth/hadethChapter.dart';
 
 class Contantofhadeth extends StatefulWidget {
@@ -19,7 +20,9 @@ class _ContantofhadethState extends State<Contantofhadeth> {
     }
     return  Container(
       decoration: const BoxDecoration(
-        image: DecorationImage(image: AssetImage('assets/images/background.png'),
+        image: DecorationImage(image: AssetImage(AppStyle.isDark
+                              ?'assets/images/dark_bg.png'
+                              : 'assets/images/background.png'),
         fit: BoxFit.cover)
       ),
       child:

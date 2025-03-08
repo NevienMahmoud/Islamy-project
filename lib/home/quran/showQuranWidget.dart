@@ -22,16 +22,16 @@ class ShowWidgetOfQuranTap extends StatelessWidget {
        Row(children: [
         Expanded(child: 
          Text(numbers.toString(),
-         style: const TextStyle(fontSize: 25,fontWeight: FontWeight.bold),
+         style: Theme.of(context).textTheme.bodySmall,
          textAlign: TextAlign.center,)),
         Container(
           height: 35,
           width: 3,
-          color: Theme.of(context).colorScheme.primary,
+          color: Theme.of(context).colorScheme.onPrimaryContainer,
         ),
         Expanded(child:
          Text(suraName,
-         style: const TextStyle(fontSize: 25,fontWeight: FontWeight.bold), 
+         style: Theme.of(context).textTheme.bodySmall, 
          textAlign: TextAlign.center)),
       ],
       ),

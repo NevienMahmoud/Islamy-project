@@ -35,16 +35,16 @@ class QuranTap extends StatelessWidget {
         Row(children: [
        Expanded(child: 
        Text('عدد الآيات',
-       style: const TextStyle(fontSize: 25,fontWeight: FontWeight.bold),
+       style: Theme.of(context).textTheme.titleSmall,
        textAlign: TextAlign.center,)),
       Container(
         height: 35,
         width: 3,
-        color: Theme.of(context).colorScheme.primary,
+        color: Theme.of(context).colorScheme.onPrimaryContainer,
       ),
        Expanded(child:
        Text('اسم السورة',
-       style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold), 
+       style: Theme.of(context).textTheme.titleSmall, 
        textAlign: TextAlign.center)),
       
     ],
