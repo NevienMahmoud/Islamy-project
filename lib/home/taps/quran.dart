@@ -33,7 +33,7 @@ class QuranTap extends StatelessWidget {
           child: Image.asset('assets/images/quran_header.png')),
        const  Divider(height: 0,),
         Row(children: [
-      const Expanded(child: 
+       Expanded(child: 
        Text('عدد الآيات',
        style: const TextStyle(fontSize: 25,fontWeight: FontWeight.bold),
        textAlign: TextAlign.center,)),
@@ -42,7 +42,7 @@ class QuranTap extends StatelessWidget {
         width: 3,
         color: Theme.of(context).colorScheme.primary,
       ),
-      const Expanded(child:
+       Expanded(child:
        Text('اسم السورة',
        style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold), 
        textAlign: TextAlign.center)),
