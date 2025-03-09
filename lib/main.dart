@@ -24,7 +24,7 @@ void main(){
              Locale('en'), // English
              Locale('ar'), // Spanish
           ],  
-          locale: Locale('en'), 
+          locale: Locale('ar'), 
       
       debugShowCheckedModeBanner: false,
       initialRoute:HomeScreen.routeName ,

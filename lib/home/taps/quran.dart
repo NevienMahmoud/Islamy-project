@@ -44,7 +44,7 @@ class QuranTap extends StatelessWidget {
       ), 
       Expanded(child: 
        Text(AppLocalizations.of(context)!.verses_number,
-       style: const TextStyle(fontSize: 25,fontWeight: FontWeight.bold),
+       style: Theme.of(context).textTheme.titleSmall,
        textAlign: TextAlign.center,)),
     ],
     ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_project/home/bottomSheet/UnSelectedBottomSheet.dart';
 import 'package:islamy_project/home/bottomSheet/selectedBottomSheet.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class ThemeBottomSheet extends StatelessWidget {
   const ThemeBottomSheet({super.key});
@@ -12,9 +14,9 @@ class ThemeBottomSheet extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
          children: [
-         SelectedBottomSheet(selectedItem: 'Dark'),
+         SelectedBottomSheet(selectedItem: AppLocalizations.of(context)!.dark ),
           SizedBox(height: 20,),
-          UnSelectedBottomSheet(unselectedItem: 'Light',)
+          UnSelectedBottomSheet(unselectedItem: AppLocalizations.of(context)!.light,)
          ],
       ),
     );

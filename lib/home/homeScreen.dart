@@ -67,7 +67,8 @@ class _HomeScreenState extends State<HomeScreen> {
           label: AppLocalizations.of(context)!.radio),
           BottomNavigationBarItem(
           backgroundColor: Theme.of(context).colorScheme.primary,
-          icon: Icon(Icons.settings),label: 'الإعدادات'),  
+          icon: Icon(Icons.settings),
+          label: AppLocalizations.of(context)!.setting),  
         ],),
         body: taps[selectedTab],
       ),

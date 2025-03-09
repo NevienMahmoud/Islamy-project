@@ -5,5 +5,10 @@
     "quran":"Quran",
     "ahadeth":"AL Ahadeth",
     "tasbeh":"Sebha",
-    "radio":"Radio"
+    "radio":"Radio",
+    "setting":"Setting",
+    "language":"Language",
+    "theme":"Theme",
+    "dark":"Dark",
+    "light":"Light"
 }
