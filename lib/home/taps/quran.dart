@@ -41,11 +41,7 @@ class QuranTap extends StatelessWidget {
         height: 35,
         width: 3,
         color: Theme.of(context).colorScheme.onPrimaryContainer,
-      ),
-      Expanded(child: 
-       Text('عدد الآيات',
-       style: Theme.of(context).textTheme.titleSmall,
-       textAlign: TextAlign.center,)),  
+      ), 
       Expanded(child: 
        Text(AppLocalizations.of(context)!.verses_number,
        style: const TextStyle(fontSize: 25,fontWeight: FontWeight.bold),
