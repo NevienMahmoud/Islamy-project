@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:islamy_project/home/bottomSheet/LanguageBottomSheet.dart';
 import 'package:islamy_project/home/bottomSheet/ThemeBottomSheet.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islamy_project/provider/settingProvider.dart';
+import 'package:provider/provider.dart';
 
 
 class SettingTap extends StatelessWidget {
@@ -9,6 +11,7 @@ class SettingTap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SettingProvider settingProvider =Provider.of<SettingProvider>(context);
     return Padding(
       padding: const EdgeInsets.all(20),
       child: Column(
@@ -28,7 +31,10 @@ class SettingTap extends StatelessWidget {
               onTap: () {
                 showModalBottomSheet(context: context, builder: (context) =>Languagebottomsheet(),);
               },
-              child: Text('English',style:Theme.of(context).textTheme.bodySmall?.copyWith(
+              child: Text(settingProvider.language=='ar'
+              ?AppLocalizations.of(context)!.arabic
+              :AppLocalizations.of(context)!.english,
+              style:Theme.of(context).textTheme.bodySmall?.copyWith(
                 fontSize: 20),
                   ),
                  ),
@@ -48,7 +54,9 @@ class SettingTap extends StatelessWidget {
               onTap: () {
                 showModalBottomSheet(context: context, builder: (context) => ThemeBottomSheet(),);
               },
-              child: Text(AppLocalizations.of(context)!.dark,
+              child: Text(settingProvider.themeMode==ThemeMode.dark
+             ? AppLocalizations.of(context)!.dark
+             :AppLocalizations.of(context)!.light,
               style:Theme.of(context).textTheme.bodySmall?.copyWith(
                 fontSize: 20),
                   ),

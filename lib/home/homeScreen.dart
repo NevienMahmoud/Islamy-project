@@ -6,6 +6,8 @@ import 'package:islamy_project/home/taps/radio.dart';
 import 'package:islamy_project/home/taps/setting.dart';
 import 'package:islamy_project/home/taps/taspeh.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islamy_project/provider/settingProvider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName='home';
@@ -29,11 +31,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    
+       SettingProvider settingProvider =Provider.of<SettingProvider>(context);
+ 
     return
      Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(image: AssetImage(AppStyle.isDark
+      decoration: BoxDecoration(
+        image: DecorationImage(image: AssetImage(settingProvider.themeMode==ThemeMode.dark
                               ?'assets/images/dark_bg.png'
                               : 'assets/images/background.png'),
         fit: BoxFit.fill)
