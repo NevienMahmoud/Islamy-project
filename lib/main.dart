@@ -21,24 +21,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
+
     SettingProvider settingProvider =Provider.of<SettingProvider>(context);
     return  MaterialApp(  
       theme: AppStyle.lightTheme,
       darkTheme: AppStyle.darkTheme,
       themeMode: settingProvider.themeMode,
-       localizationsDelegates: [
+      localizationsDelegates: const [
              AppLocalizations.delegate,
              GlobalMaterialLocalizations.delegate,
              GlobalWidgetsLocalizations.delegate,
              GlobalCupertinoLocalizations.delegate,
           ],
-       supportedLocales: [
+      supportedLocales:const [
              Locale('en'), // English
              Locale('ar'), // Arabic
           ],  
-          locale: Locale('ar'), 
-      
+      locale: Locale(settingProvider.language), 
       debugShowCheckedModeBanner: false,
       initialRoute:HomeScreen.routeName ,
       routes: {

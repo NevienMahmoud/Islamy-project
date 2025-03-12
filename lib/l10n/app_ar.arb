@@ -10,5 +10,7 @@
     "language":"اللغة",
     "theme":"المظهر",
     "dark":"داكن",
-    "light":"فاتح"
+    "light":"فاتح",
+    "arabic":"العربية",
+    "english":"English"
 }

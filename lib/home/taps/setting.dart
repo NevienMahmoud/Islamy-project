@@ -31,7 +31,10 @@ class SettingTap extends StatelessWidget {
               onTap: () {
                 showModalBottomSheet(context: context, builder: (context) =>Languagebottomsheet(),);
               },
-              child: Text('English',style:Theme.of(context).textTheme.bodySmall?.copyWith(
+              child: Text(settingProvider.language=='ar'
+              ?AppLocalizations.of(context)!.arabic
+              :AppLocalizations.of(context)!.english,
+              style:Theme.of(context).textTheme.bodySmall?.copyWith(
                 fontSize: 20),
                   ),
                  ),
