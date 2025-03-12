@@ -5,15 +5,28 @@ import 'package:islamy_project/home/hadeth/contantOfHadeth.dart';
 import 'package:islamy_project/home/homeScreen.dart';
 import 'package:islamy_project/home/quran/contantOfQuran.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islamy_project/provider/settingProvider.dart';
+import 'package:provider/provider.dart';
 
 void main(){
   runApp(
-    MaterialApp(
+   ChangeNotifierProvider(
+    create: (context) => SettingProvider(),
+    child: const MyApp())
+  ); 
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    
+    SettingProvider settingProvider =Provider.of<SettingProvider>(context);
+    return  MaterialApp(  
       theme: AppStyle.lightTheme,
       darkTheme: AppStyle.darkTheme,
-      themeMode: AppStyle.isDark
-               ?ThemeMode.dark
-               :ThemeMode.light,
+      themeMode: settingProvider.themeMode,
        localizationsDelegates: [
              AppLocalizations.delegate,
              GlobalMaterialLocalizations.delegate,
@@ -22,7 +35,7 @@ void main(){
           ],
        supportedLocales: [
              Locale('en'), // English
-             Locale('ar'), // Spanish
+             Locale('ar'), // Arabic
           ],  
           locale: Locale('ar'), 
       
@@ -33,6 +46,6 @@ void main(){
         QuranContant.routeName:(_)=>QuranContant(),
         Contantofhadeth.routeName:(_)=>Contantofhadeth(),
       },
-    )
-  );
+    ) ;
+  }
 }
