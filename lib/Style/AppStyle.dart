@@ -28,6 +28,11 @@ class AppStyle  {
             fontWeight: FontWeight.bold,
             color: lightPrimary
           ),
+          bodyLarge: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.w400,
+            color: Colors.white
+          ),
          ),
          scaffoldBackgroundColor: Colors.transparent,
          appBarTheme: const AppBarTheme(
@@ -42,7 +47,9 @@ class AppStyle  {
          colorScheme: ColorScheme.fromSeed(seedColor: Colors. white,
          primary:  lightPrimary,
          secondary:  lightPrimary.withOpacity(.75),
-         onPrimaryContainer: lightPrimary),
+         onPrimaryContainer: lightPrimary,
+         primaryContainer: lightPrimary.withOpacity(.75),
+          ),
          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: lightPrimary,
           selectedIconTheme: IconThemeData(color: Colors.black,size: 30),
@@ -86,6 +93,11 @@ class AppStyle  {
             fontWeight: FontWeight.bold,
             color: darkSecondary
           ),
+          bodyLarge: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.w400,
+            color: Colors.black
+          ),
          ),
          scaffoldBackgroundColor: Colors.transparent,
          appBarTheme: const AppBarTheme(
@@ -101,6 +113,7 @@ class AppStyle  {
          primary:  darkPrimary,
          secondary:  darkSecondary,
          onPrimaryContainer: darkSecondary,
+         primaryContainer: darkPrimary,
          ),
          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor:darkPrimary,

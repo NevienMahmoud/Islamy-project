@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islamy_project/Style/AppStyle.dart';
 import 'package:islamy_project/home/taps/hadeth.dart';
 import 'package:islamy_project/home/taps/quran.dart';
 import 'package:islamy_project/home/taps/radio.dart';
