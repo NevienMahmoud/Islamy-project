@@ -22,7 +22,7 @@ void main(){
           ],
        supportedLocales: [
              Locale('en'), // English
-             Locale('ar'), // Spanish
+             Locale('ar'), //Arabic
           ],  
           locale: Locale('ar'), 
       
