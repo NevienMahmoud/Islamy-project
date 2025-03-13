@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islamy_project/Style/AppStyle.dart';
 import 'package:islamy_project/home/hadeth/hadethChapter.dart';
+import 'package:islamy_project/provider/settingProvider.dart';
+import 'package:provider/provider.dart';
 
 class Contantofhadeth extends StatefulWidget {
   static const String routeName='ContantOfHadeth';
@@ -13,13 +16,16 @@ class Contantofhadeth extends StatefulWidget {
 class _ContantofhadethState extends State<Contantofhadeth> {
   @override
   Widget build(BuildContext context) {
-    HadethArgus args = ModalRoute.of(context)?.settings.arguments as HadethArgus;
+     SettingProvider settingProvider =Provider.of<SettingProvider>(context);
+     HadethArgus args = ModalRoute.of(context)?.settings.arguments as HadethArgus;
     if (hadethLiens.isEmpty){
       loadFile(args.index);
     }
     return  Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(image: AssetImage('assets/images/background.png'),
+      decoration: BoxDecoration(
+        image: DecorationImage(image: AssetImage(settingProvider.themeMode==ThemeMode.dark
+                              ?'assets/images/dark_bg.png'
+                              : 'assets/images/background.png'),
         fit: BoxFit.cover)
       ),
       child:

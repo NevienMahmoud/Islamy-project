@@ -1,0 +1,17 @@
+{
+    "app_name":"اسلامي",
+    "sura_name":"اسم السورة",
+    "verses_number":"عدد الأيات",
+    "quran":"القرآن",
+    "ahadeth":"الأحاديث",
+    "tasbeh":"السبحة",
+    "radio":"الإذاعة",
+    "setting":"الإعدادات",
+    "language":"اللغة",
+    "theme":"المظهر",
+    "dark":"داكن",
+    "light":"فاتح",
+    "arabic":"العربية",
+    "english":"English",
+    "sebha_counter":"عدد التسبيحات"
+}

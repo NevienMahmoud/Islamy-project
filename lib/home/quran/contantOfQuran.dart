@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islamy_project/Style/AppStyle.dart';
 import 'package:islamy_project/home/quran/QuranChapter.dart';
+import 'package:islamy_project/provider/settingProvider.dart';
+import 'package:provider/provider.dart';
 
 class QuranContant extends StatefulWidget {
   static const String routeName='contant of Quran';
@@ -13,13 +16,16 @@ class QuranContant extends StatefulWidget {
 class _QuranContantState extends State<QuranContant> {
   @override
   Widget build(BuildContext context) {
+   SettingProvider settingProvider =Provider.of<SettingProvider>(context);
    QuranArguments args= ModalRoute.of(context)?.settings.arguments as QuranArguments;
    if(suraLines.isEmpty){
    loadFile(args.index);
    }
     return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(image: AssetImage('assets/images/background.png'),
+      decoration: BoxDecoration(
+        image: DecorationImage(image: AssetImage(settingProvider.themeMode==ThemeMode.dark
+                              ?'assets/images/dark_bg.png'
+                              : 'assets/images/background.png'),
         fit: BoxFit.cover)
       ),
       child: Scaffold(
@@ -31,7 +37,7 @@ class _QuranContantState extends State<QuranContant> {
          ? const Center(child: CircularProgressIndicator())
          :ListView.separated(
            itemBuilder: (context, index) => QuranChapter(content: suraLines[index],), 
-           separatorBuilder: (context, index) => Divider(), 
+           separatorBuilder: (context, index) =>const Divider(), 
            itemCount: suraLines.length),
       ),
     ));

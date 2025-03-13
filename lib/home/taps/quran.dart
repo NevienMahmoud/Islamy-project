@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamy_project/home/quran/showQuranWidget.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class QuranTap extends StatelessWidget {
    QuranTap({super.key});
 
@@ -33,20 +33,19 @@ class QuranTap extends StatelessWidget {
           child: Image.asset('assets/images/quran_header.png')),
        const  Divider(height: 0,),
         Row(children: [
-      const Expanded(child: 
-       Text('عدد الآيات',
-       style: const TextStyle(fontSize: 25,fontWeight: FontWeight.bold),
-       textAlign: TextAlign.center,)),
+      Expanded(child:
+       Text(AppLocalizations.of(context)!.sura_name,
+       style: Theme.of(context).textTheme.titleSmall, 
+       textAlign: TextAlign.center)),
       Container(
         height: 35,
         width: 3,
-        color: Theme.of(context).colorScheme.primary,
-      ),
-      const Expanded(child:
-       Text('اسم السورة',
-       style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold), 
-       textAlign: TextAlign.center)),
-      
+        color: Theme.of(context).colorScheme.onPrimaryContainer,
+      ), 
+      Expanded(child: 
+       Text(AppLocalizations.of(context)!.verses_number,
+       style: Theme.of(context).textTheme.titleSmall,
+       textAlign: TextAlign.center,)),
     ],
     ),
         const Divider(height: 0,),
