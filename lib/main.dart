@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 void main(){
   runApp(
    ChangeNotifierProvider(
-    create: (context) => SettingProvider(),
+    create: (context) => SettingProvider()..getTheme(),
     child: const MyApp())
   ); 
 }
