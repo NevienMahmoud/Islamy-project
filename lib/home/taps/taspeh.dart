@@ -22,14 +22,13 @@ class _TasbehTapState extends State<TasbehTap> {
   void onTap() {
    setState(() {
           counter ++;
-      if(counter==33){
+      if(counter>33){
         counter=0;
         index++;
       }
       if(index==tasbee7.length){
         index=0;
       }
-
    });
   }
 
@@ -48,14 +47,11 @@ class _TasbehTapState extends State<TasbehTap> {
             children: [
               Padding(
                 padding: EdgeInsets.only(top: height * .08),
-                child: GestureDetector(
-                  onTap: onTap,
-                  child: Image.asset(
-                    settingProvider.themeMode == ThemeMode.dark
-                        ? 'assets/images/sebha_dark.png'
-                        : 'assets/images/sebha_light.png',
-                    fit: BoxFit.contain,
-                  ),
+                child: Image.asset(
+                  settingProvider.themeMode == ThemeMode.dark
+                      ? 'assets/images/sebha_dark.png'
+                      : 'assets/images/sebha_light.png',
+                  fit: BoxFit.contain,
                 ),
               ),
               Positioned(
@@ -71,49 +67,35 @@ class _TasbehTapState extends State<TasbehTap> {
             ],
           ),
         ),
-        SizedBox(
-          height: height * 0.05,
-        ),
-        Expanded(
-          flex: 2,
-          child: Text(AppLocalizations.of(context)!.sebha_counter,
-              style: Theme.of(context).textTheme.titleSmall),
-        ),
-        SizedBox(
-          height: height * 0.01,
-        ),
-        Expanded(
-          flex: 2,
-          child: Container(
-            width: width * 0.2,
-            height: height * .5,
-            decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primaryContainer,
-                borderRadius: BorderRadius.circular(25)),
-            alignment: Alignment.center,
-            child: Text(
-              '$counter',
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
+        const Spacer(),
+        Text(AppLocalizations.of(context)!.sebha_counter,
+            style: Theme.of(context).textTheme.titleSmall),
+        const Spacer(),
+        Container(
+          width: width * 0.2,
+          height: height * .1,
+          decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.primaryContainer,
+              borderRadius: BorderRadius.circular(25)),
+          alignment: Alignment.center,
+          child: Text(
+            '$counter',
+            style: Theme.of(context).textTheme.bodySmall,
           ),
         ),
-        SizedBox(
-          height: height * 0.03,
-        ),
-        Expanded(
-          flex: 1,
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
-            ),
-            onPressed: () {},
-            child: Text(
-              tasbee7[index],
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
+        const Spacer(flex: 3,),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
+            padding: EdgeInsets.symmetric(horizontal: height*0.04,vertical: width*.02)
+          ),
+          onPressed: onTap,
+          child: Text(
+            tasbee7[index],
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
         ),
-        Spacer(flex: 1)
+        const Spacer(flex: 3)
       ],
     );
   }
