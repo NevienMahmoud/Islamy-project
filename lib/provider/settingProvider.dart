@@ -15,6 +15,7 @@ class SettingProvider extends ChangeNotifier{
   changeLangauge(String newLang){
     if (newLang==language) return;
     language= newLang;
+    savedLanguage(newLang);
     notifyListeners();
   }
 
@@ -40,6 +41,29 @@ class SettingProvider extends ChangeNotifier{
    }
    notifyListeners();
   
+  }
+
+  void savedLanguage(String lang)async{
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+
+   if(lang == 'en'){
+    prefs.setString('language', 'en');
+   }else{
+    prefs.setString('language', 'ar');
+   }
+
+  }
+
+  void getLang()async{
+   SharedPreferences prefs = await SharedPreferences.getInstance();
+   String lan = prefs.getString('language')??'en';
+   if (lan == 'en'){
+     language = 'en';
+   }else{
+     language = 'ar';
+   }
+   notifyListeners();
+
   }
 
 }
