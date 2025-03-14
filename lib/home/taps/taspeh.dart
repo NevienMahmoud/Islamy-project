@@ -13,6 +13,7 @@ class TasbehTap extends StatefulWidget {
 class _TasbehTapState extends State<TasbehTap> {
   int counter=0;
   int index=0;
+  double angle = 0;
   List<String> tasbee7=[
     'سبحان الله',
     'الحمد لله',
@@ -20,6 +21,7 @@ class _TasbehTapState extends State<TasbehTap> {
     'أكبر الله',
   ];
   void onTap() {
+    angle+=0.1;
    setState(() {
           counter ++;
       if(counter>33){
@@ -47,11 +49,14 @@ class _TasbehTapState extends State<TasbehTap> {
             children: [
               Padding(
                 padding: EdgeInsets.only(top: height * .08),
-                child: Image.asset(
-                  settingProvider.themeMode == ThemeMode.dark
-                      ? 'assets/images/sebha_dark.png'
-                      : 'assets/images/sebha_light.png',
-                  fit: BoxFit.contain,
+                child: Transform.rotate(
+                  angle: angle,
+                  child: Image.asset(
+                    settingProvider.themeMode == ThemeMode.dark
+                        ? 'assets/images/sebha_dark.png'
+                        : 'assets/images/sebha_light.png',
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
               Positioned(
